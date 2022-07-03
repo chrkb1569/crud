@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 작성 폼</title>
+</head>
+<style>
+    form {
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+    }
+
+    .layout input {
+        box-sizing: border-box;
+        width : 100%
+        margin-top : auto;
+    }
+
+    .layout textarea {
+        width : 400px;
+        height : 15em;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+
+<div class="layout">
+    <form action="/board/write" method="post">
+        <div>
+            <label for="title">게시글 제목:</label>
+            <input type="text" id="title"/>
+        </div>
+
+        <div>
+            <p>user ID : <input type="text" name="username"></p>
+        </div>
+
+        <div>
+            <label for="content">게시글</label>
+            <textarea id="content"></textarea>
+        </div>
+
+        <button type="submit">작성</button>
+    </form>
+</div>
+</body>
+</html>
