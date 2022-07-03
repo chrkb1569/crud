@@ -16,7 +16,7 @@ public class Board {
     // 키가 생성되는 방식을 정의함. strategy = GenerationType.AUTO의 경우에는
     // 데이터 베이스가 자동적으로 키를 생성한다는 것을 나타냄
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int number; // 게시물의 번호
+    private Integer number; // 게시물의 번호
     private String title; // 게시물의 제목
     private String content; // 게시물의 내용
     private String user_id; // 게시자의 ID
