@@ -29,20 +29,11 @@
 
 <div class="layout">
     <form action="/board/write" method="post">
-        <div>
-            <label for="title">게시글 제목:</label>
-            <input type="text" id="title"/>
-        </div>
-
-        <div>
-            <p>user ID : <input type="text" name="username"></p>
-        </div>
-
-        <div>
-            <label for="content">게시글</label>
-            <textarea id="content"></textarea>
-        </div>
-
+        <p> 게시글 제목 : <input type="text" name="title" value="" placeholder="제목을 입력해주세요"></p>
+        <p> user ID : <input type="text" name = "user_id" value ="" placeholder="사용자 ID를 입력해주세요"></p>
+        <p> 게시글 :
+            <textarea id="content" name="content" placeholder="게시글을 입력해주세요"></textarea>
+        </p>
         <button type="submit">작성</button>
     </form>
 </div>
