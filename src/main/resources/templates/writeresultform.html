@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 작성 완료</title>
+</head>
+<body>
+<div class>
+    <div class="py-5 text-center">
+        <h2>게시글 상세</h2>
+    </div>
+
+    <div>
+        <label for="title">게시글 제목</label>
+        <input type="text" id="title" name="title" class="form-control" th:value="${board.title}">
+    </div>
+
+    <div>
+        <label for="user_id">사용자 ID</label>
+        <input type="text" id="user_id" name="user_id" class="form-control" th:value="${board.user_id}">
+    </div>
+
+    <div>
+        <label for="content">게시글</label>
+        <input type="text" id="content" name="content" class="form-control" th:value="${board.content}">
+    </div>
+</div>
+</body>
+</html>
