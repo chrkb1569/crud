@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 목록 조회</title>
+</head>
+
+<style>
+    .layout {
+        width : 500px;
+        margin : 0 auto;
+        margin-top: 40px;
+    }
+</style>
+
+<body>
+<div class="layout">
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>사용자</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="board : ${boards}">
+            <td><a th:text="${board.number}"></a></td>
+            <td><a th:text="${board.title}"></a></td>
+            <td><a th:text="${board.user_id}"></a></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
