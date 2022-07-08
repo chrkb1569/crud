@@ -12,17 +12,17 @@
 
     <div>
         <label for="title">게시글 제목</label>
-        <input type="text" id="title" name="title" class="form-control" th:value="${board.title}">
+        <input type="text" id="title" name="title" class="form-control" th:value="${board.title}" readonly>
     </div>
 
     <div>
         <label for="user_id">사용자 ID</label>
-        <input type="text" id="user_id" name="user_id" class="form-control" th:value="${board.user_id}">
+        <input type="text" id="user_id" name="user_id" class="form-control" th:value="${board.user_id}" readonly>
     </div>
 
     <div>
         <label for="content">게시글</label>
-        <input type="text" id="content" name="content" class="form-control" th:value="${board.content}">
+        <input type="text" id="content" name="content" class="form-control" th:value="${board.content}" readonly>
     </div>
 </div>
 </body>
