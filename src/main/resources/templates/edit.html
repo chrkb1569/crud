@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정 폼</title>
+</head>
+
+<style>
+    form {
+        margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+    }
+
+    .layout input {
+        box-sizing: border-box;
+        width : 100%
+        margin-top : auto;
+    }
+
+    .layout textarea {
+        width : 400px;
+        height : 15em;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+<div class="layout">
+    <form action="/board/edit/{boardId}(boardId=${board.number})" th:action method="post">
+        <p> 게시글 제목 : <input type="text" name="title" value="" th:value="${board.title}"></p>
+        <p> user ID : <input type="text" name = "user_id" value="" th:value="${board.user_id}"></p>
+        <p> 게시글 :
+            <textarea id="content" name="content" value="" th:text="${board.content}"></textarea>
+        </p>
+        <button type="submit">수정</button>
+    </form>
+</div>
+</body>
+</html>
