@@ -5,9 +5,7 @@ import crud_toy_project.crud.service.CrudService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +34,31 @@ public class CrudController {
         model.addAttribute("boards", boards);
 
         return "boards";
+    }
+
+    @GetMapping("/boards/{boardId}")
+    public String board_detail(@PathVariable("boardId") Integer boardId, Model model) {
+        board Find_board = crudService.findById(boardId);
+
+        model.addAttribute("board", Find_board);
+
+        return "board_detail";
+    }
+
+    @GetMapping("/boards/edit/{boardId}")
+    public String edit_form(@PathVariable Integer boardId, Model model) {
+        board Find_board = crudService.findById(boardId);
+
+        model.addAttribute("board", Find_board);
+
+        return "edit";
+    }
+
+    @PostMapping("/boards/edit/{boardId}")
+    public String edit_result(@PathVariable Integer boardId, @ModelAttribute board board, Model model) {
+        crudService.update_board(boardId, board);
+
+        return "edit_result";
     }
 
 }
