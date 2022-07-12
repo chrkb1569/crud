@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CrudService {
@@ -18,6 +19,19 @@ public class CrudService {
 
     public List<board> getList() {
         return crudRepository.findAll();
+    }
+
+    public board findById(Integer Id) {
+        return crudRepository.findById(Id).get();
+    }
+
+    public void update_board(Integer Id, board board) {
+        board find = crudRepository.findById(Id).get();
+        find.setTitle(board.getTitle());
+        find.setUser_id(board.getUser_id());
+        find.setContent(board.getContent());
+
+        crudRepository.save(find);
     }
 
 }
