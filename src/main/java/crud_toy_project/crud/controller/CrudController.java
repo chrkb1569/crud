@@ -14,7 +14,7 @@ public class CrudController {
     @Autowired
     private CrudService crudService;
 
-    @RequestMapping
+    @RequestMapping("/write")
     public String write_form() {
         return "writeform";
     }
@@ -61,4 +61,10 @@ public class CrudController {
         return "edit_result";
     }
 
+    @GetMapping("/board/delete/{boardId}")
+    public String delete_board(@PathVariable Integer boardId) {
+        crudService.delete_board(boardId);
+
+        return "redirect:/boards";
+    }
 }
