@@ -59,6 +59,11 @@
       <button onclick="location.href='/boards/edit/{boardselect}(boardselect=${board.number})'" th:onclick="|location.href='@{/boards/edit/{boardselect}(boardselect=${board.number})}'|"
               type="button">게시글 수정</button>
     </div>
+
+    <div>
+      <button onclick="location.href='/board/delete/{boardselect}(boardselect=${board.number})'" th:onclick="|location.href='@{/board/delete/{boardselect}(boardselect=${board.number})}'|"
+              type="button">게시글 삭제</button>
+    </div>
   </div>
 </body>
 </html>
