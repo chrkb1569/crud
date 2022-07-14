@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class CrudService {
@@ -34,4 +33,8 @@ public class CrudService {
         crudRepository.save(find);
     }
 
+    public void delete_board(Integer Id) {
+        board find = crudRepository.findById(Id).get();
+        crudRepository.delete(find);
+    }
 }
